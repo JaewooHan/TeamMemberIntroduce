@@ -12,7 +12,7 @@ public class AddTeamMemberServlet extends HttpServlet {
 			throws IOException {
 		req.setCharacterEncoding("EUC-KR");
 	    resp.setContentType("text/plain;charset=utf-8");
-		
+
 		String name = req.getParameter("name");
 		String num = req.getParameter("num");
 		String pnum = req.getParameter("pnum");
