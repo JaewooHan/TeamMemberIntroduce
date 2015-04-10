@@ -17,7 +17,10 @@ public class RetrieveTeamMemberServlet extends HttpServlet{
 	    
 		String reader;
 	
-		List<TeamMember> memberList = MemberManager.getAllMembers();
+		PersistenceManager pm = MyPersistenceManager.getManager();
+			Query qry = pm.newQuery(TeamMember.class); 
+			List<TeamMember> memberList = (List<TeamMember>) qry.execute(); 
+
 		
 		resp.getWriter().println("<html><body>");
 		resp.getWriter().println("<h1>ÆÀ¸â¹öÁ¤º¸</h1>");
