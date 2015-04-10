@@ -34,7 +34,7 @@ public class UpdateServlet extends HttpServlet{
 		PrintWriter out = resp.getWriter();
 		
 		out.println("<html><body>");
-	    out.println("<tr><td> <a href=\"/retrieveteammember\" target=\"_self\"> 수정완료 </a> </td></tr>");
+	    out.println("<tr><td><a href=\"/retrieveteammember\" target=\"_self\"> 수정완료 </a> </td></tr>");
 		out.println("</body></html>");
 	    
 	}
