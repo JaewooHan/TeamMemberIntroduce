@@ -1,0 +1,52 @@
+package com.ac.shinhan.csp;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.jdo.PersistenceManager;
+import javax.jdo.Query;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class RetrieveTeamMemberServlet extends HttpServlet{
+	public void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws IOException {
+		req.setCharacterEncoding("EUC-KR");
+	    resp.setContentType("text/plain;charset=utf-8");
+	    
+		String reader;
+	
+		List<TeamMember> memberList = MemberManager.getAllMembers();
+		
+		resp.getWriter().println("<html><body>");
+		resp.getWriter().println("<h1>팀멤버정보</h1>");
+		resp.getWriter().println("<table border=1cellspacing=3cellpadding=3");
+		resp.getWriter().println("<tr bgcolor=#24FCFF>");
+		resp.getWriter().println("<th>이름</th><th>학번</th><th>전화번호</th><th>이메일</th>"
+				+ "<th>카톡ID</th><th>팀장여부</th><th>GitHubID</th><th>삭제</th>");
+		resp.getWriter().println("</tr>");
+
+		for(TeamMember tm : memberList){
+			if(tm.getKap() != null)
+				reader = "팀장";
+			else
+				reader = "팀원";
+			resp.getWriter().println("<tr bgcolor=#ffffff>");
+			resp.getWriter().println("<td> <a href=\'/updateteammember?upKey="+tm.getKey()+"\' target=_self >"
+					+ tm.getName()+"</a></td>"
+					+"<td>" + tm.getNum()+"</td>"
+					+"<td>" + tm.getPnum()+"</td>"
+					+"<td>" + tm.getEmail()+"</td>"
+					+"<td>" + tm.getKid()+"</td>"
+					+"<td>" + reader +"</td>"
+					+"<td>" + tm.getGitid()+"</td>"
+					+"<td> <input type=button value=삭제 onclick=\"location.href=\'/deleteteammember?delKey="+tm.getKey()+"\'\"></td>");
+			resp.getWriter().println("</tr>");
+			
+		}
+		
+		resp.getWriter().println("</table>");
+		resp.getWriter().println("</body></html>");
+	}
+}
