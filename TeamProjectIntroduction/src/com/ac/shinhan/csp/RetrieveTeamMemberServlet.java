@@ -46,10 +46,9 @@ public class RetrieveTeamMemberServlet extends HttpServlet{
 					+"<td>" + tm.getGitid()+"</td>"
 					+"<td> <input type=button value=삭제 onclick=\"location.href=\'/deleteteammember?delKey="+tm.getKey()+"\'\"></td>");
 			resp.getWriter().println("</tr>");
-			
 		}
-		
 		resp.getWriter().println("</table>");
+		resp.getWriter().println("<td> <a href=index.html target=_self >처음으로</a></td>");
 		resp.getWriter().println("</body></html>");
 	}
 }

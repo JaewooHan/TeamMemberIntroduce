@@ -14,8 +14,9 @@ import com.google.appengine.api.search.query.QueryParser.member_return;
 public class UpdateServlet extends HttpServlet{
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
-		req.setCharacterEncoding("EUC-KR");
-		resp.setContentType("text/plain;charset=utf-8");
+
+		resp.setCharacterEncoding("UTF-8"); 
+		resp.setContentType("text/html");
 	    
 		Long key = Long.parseLong(req.getParameter("key"));
 		
@@ -35,7 +36,6 @@ public class UpdateServlet extends HttpServlet{
 		
 		out.println("<html><body>");
 	    out.println("<tr><td><a href=\"/retrieveteammember\" target=\"_self\"> 수정완료 </a> </td></tr>");
-		out.println("</body></html>");
-	    
+		out.println("</body></html>");	
 	}
 }

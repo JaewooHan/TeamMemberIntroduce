@@ -12,8 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 public class UpdateTeamMemberServlet extends HttpServlet{
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
-		req.setCharacterEncoding("EUC-KR");
-		resp.setContentType("text/plain;charset=utf-8");
+		
+		resp.setCharacterEncoding("UTF-8"); 
+		resp.setContentType("text/html"); 
+
 		
 		Long ckey = Long.parseLong(req.getParameter("upKey"));
 		PersistenceManager pm = MyPersistenceManager.getManager();
