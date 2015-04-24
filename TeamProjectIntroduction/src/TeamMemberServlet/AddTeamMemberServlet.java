@@ -1,4 +1,4 @@
-package com.ac.shinhan.csp;
+package TeamMemberServlet;
 
 import java.io.IOException;
 import java.util.List;
@@ -6,6 +6,9 @@ import java.util.List;
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.servlet.http.*;
+
+import Manager.MyPersistenceManager;
+import Team.TeamMember;
 
 public class AddTeamMemberServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -17,12 +20,12 @@ public class AddTeamMemberServlet extends HttpServlet {
 		String num = req.getParameter("num");
 		String pnum = req.getParameter("pnum");
 		String email = req.getParameter("email");
-		String kid = req.getParameter("kid");
+		String cid = req.getParameter("cid");
 		String kap = req.getParameter("kap");
 		String gitid = req.getParameter("gitid");
 		
 		PersistenceManager pm = MyPersistenceManager.getManager();
-		TeamMember m = new TeamMember(name, num, pnum, email, kid, kap, gitid);
+		TeamMember m = new TeamMember(name, num, pnum, email, cid, kap, gitid);
 		pm.makePersistent(m);
 		
 		resp.getWriter().println("<html><body>");
@@ -30,7 +33,7 @@ public class AddTeamMemberServlet extends HttpServlet {
 		resp.getWriter().println("ÇĞ¹ø: "+num+"<br>");
 		resp.getWriter().println("ÀüÈ­¹øÈ£: "+pnum+"<br>");
 		resp.getWriter().println("¸ŞÀÏÁÖ¼Ò: "+email+"<br>");
-		resp.getWriter().println("Ä«ÅåID: "+kid+"<br>");
+		resp.getWriter().println("Ä«ÅåID: "+cid+"<br>");
 		if(kap != null)
 			resp.getWriter().println("ÆÀÀå¿©ºÎ: ÆÀÀå"+"<br>");
 		else

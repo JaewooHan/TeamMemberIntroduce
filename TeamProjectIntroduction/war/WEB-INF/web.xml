@@ -6,7 +6,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet>
 		<servlet-name>AddTeamMemberServlet</servlet-name>
-		<servlet-class>com.ac.shinhan.csp.AddTeamMemberServlet</servlet-class>
+		<servlet-class>TeamMemberServlet.AddTeamMemberServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>AddTeamMemberServlet</servlet-name>
@@ -15,7 +15,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	
 	<servlet>
 		<servlet-name>RetrieveTeamMember</servlet-name>
-		<servlet-class>com.ac.shinhan.csp.RetrieveTeamMemberServlet</servlet-class>
+		<servlet-class>TeamMemberServlet.RetrieveTeamMemberServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>RetrieveTeamMember</servlet-name>
@@ -24,7 +24,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	
 	<servlet>
 		<servlet-name>UpdateTeamMember</servlet-name>
-		<servlet-class>com.ac.shinhan.csp.UpdateTeamMemberServlet</servlet-class>
+		<servlet-class>TeamMemberServlet.UpdateTeamMemberServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>UpdateTeamMember</servlet-name>
@@ -33,7 +33,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	
 	<servlet>
 		<servlet-name>DeleteTeamMember</servlet-name>
-		<servlet-class>com.ac.shinhan.csp.DeleteTeamMemberServlet</servlet-class>
+		<servlet-class>TeamMemberServlet.DeleteTeamMemberServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>DeleteTeamMember</servlet-name>
@@ -42,7 +42,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	
 	<servlet>
 		<servlet-name>UpdateServlet</servlet-name>
-		<servlet-class>com.ac.shinhan.csp.UpdateServlet</servlet-class>
+		<servlet-class>TeamMemberServlet.UpdateServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>UpdateServlet</servlet-name>

@@ -1,14 +1,15 @@
-package com.ac.shinhan.csp;
+package TeamMemberServlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 import javax.jdo.PersistenceManager;
-import javax.jdo.Query;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import Manager.MyPersistenceManager;
+import Team.TeamMember;
 
 public class DeleteTeamMemberServlet extends HttpServlet{
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)

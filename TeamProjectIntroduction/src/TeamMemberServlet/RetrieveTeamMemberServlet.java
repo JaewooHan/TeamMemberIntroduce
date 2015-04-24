@@ -1,4 +1,4 @@
-package com.ac.shinhan.csp;
+package TeamMemberServlet;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Manager.MyPersistenceManager;
+import Team.TeamMember;
+
 public class RetrieveTeamMemberServlet extends HttpServlet{
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
@@ -18,9 +21,8 @@ public class RetrieveTeamMemberServlet extends HttpServlet{
 		String reader;
 	
 		PersistenceManager pm = MyPersistenceManager.getManager();
-			Query qry = pm.newQuery(TeamMember.class); 
-			List<TeamMember> memberList = (List<TeamMember>) qry.execute(); 
-
+		Query qry = pm.newQuery(TeamMember.class); 
+		List<TeamMember> memberList = (List<TeamMember>) qry.execute(); 
 		
 		resp.getWriter().println("<html><body>");
 		resp.getWriter().println("<h1>ÆÀ¸â¹öÁ¤º¸</h1>");
@@ -41,7 +43,7 @@ public class RetrieveTeamMemberServlet extends HttpServlet{
 					+"<td>" + tm.getNum()+"</td>"
 					+"<td>" + tm.getPnum()+"</td>"
 					+"<td>" + tm.getEmail()+"</td>"
-					+"<td>" + tm.getKid()+"</td>"
+					+"<td>" + tm.getCid()+"</td>"
 					+"<td>" + reader +"</td>"
 					+"<td>" + tm.getGitid()+"</td>"
 					+"<td> <input type=button value=»èÁ¦ onclick=\"location.href=\'/deleteteammember?delKey="+tm.getKey()+"\'\"></td>");

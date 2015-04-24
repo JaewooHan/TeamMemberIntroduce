@@ -1,4 +1,4 @@
-package com.ac.shinhan.csp;
+package Team;
 
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.IdentityType;
@@ -17,16 +17,16 @@ public class TeamMember {
 	@Persistent
 	private String num;
 	@Persistent
-	private String pnum,email,kid,kap,gitid;
+	private String pnum,email,cid,kap,gitid;
 	
 	public TeamMember(String name, String num, String pnum, String email,
-			String kid, String kap, String gitid) {
+			String cid, String kap, String gitid) {
 		super();
 		this.name = name;
 		this.num = num;
 		this.pnum = pnum;
 		this.email = email;
-		this.kid = kid;
+		this.cid = cid;
 		this.kap = kap;
 		this.gitid = gitid;
 	}
@@ -55,12 +55,12 @@ public class TeamMember {
 		this.email = email;
 	}
 
-	public String getKid() {
-		return kid;
+	public String getCid() {
+		return cid;
 	}
 
-	public void setKid(String kid) {
-		this.kid = kid;
+	public void setCid(String cid) {
+		this.cid = cid;
 	}
 
 	public String getKap() {

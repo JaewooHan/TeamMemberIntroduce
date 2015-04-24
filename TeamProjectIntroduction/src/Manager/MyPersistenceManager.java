@@ -1,4 +1,4 @@
-package com.ac.shinhan.csp;
+package Manager;
 
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;

@@ -1,15 +1,15 @@
-package com.ac.shinhan.csp;
+package TeamMemberServlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 import javax.jdo.PersistenceManager;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.appengine.api.search.query.QueryParser.member_return;
+import Manager.MyPersistenceManager;
+import Team.TeamMember;
 
 public class UpdateServlet extends HttpServlet{
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -27,7 +27,7 @@ public class UpdateServlet extends HttpServlet{
 		m.setNum(req.getParameter("num"));
 		m.setPnum(req.getParameter("pnum"));
 		m.setEmail(req.getParameter("email"));
-		m.setKid(req.getParameter("kid"));
+		m.setCid(req.getParameter("cid"));
 		m.setKap(req.getParameter("kap"));
 		m.setGitid(req.getParameter("gitid"));
 		pm.close();
