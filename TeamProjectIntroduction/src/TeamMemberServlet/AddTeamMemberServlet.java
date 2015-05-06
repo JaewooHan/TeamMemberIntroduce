@@ -28,7 +28,7 @@ public class AddTeamMemberServlet extends HttpServlet {
 		TeamMember m = new TeamMember(name, num, pnum, email, cid, kap, gitid);
 		pm.makePersistent(m);
 		
-		resp.getWriter().println("<html><body>");
+		/*resp.getWriter().println("<html><body>");
 		resp.getWriter().println("이름: "+name+"<br>");
 		resp.getWriter().println("학번: "+num+"<br>");
 		resp.getWriter().println("전화번호: "+pnum+"<br>");
@@ -40,7 +40,8 @@ public class AddTeamMemberServlet extends HttpServlet {
 			resp.getWriter().println("팀장여부: 팀원"+"<br>");
 		resp.getWriter().println("GitHubID: "+gitid+"<br>");
 		resp.getWriter().println("<td> <a href=index.html target=_self >처음으로</a></td>");
-		resp.getWriter().println("</body></html>");
+		resp.getWriter().println("</body></html>");*/
+		resp.sendRedirect("/retrieveteammember");
 		
 	}
 }

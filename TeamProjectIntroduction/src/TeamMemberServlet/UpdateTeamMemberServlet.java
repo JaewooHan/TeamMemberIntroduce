@@ -29,7 +29,7 @@ public class UpdateTeamMemberServlet extends HttpServlet{
 		
 	    PrintWriter out =  resp.getWriter();
 	    
-	    out.println("<html><body><h1>팀멤버 정보 변경</h1><table><tr><form method='post'action='/update'>"); 
+	    out.println("<html><head><title>팀멤버수정화면</title></head><body><h1>팀멤버 정보 변경</h1><table><tr><form method='post'action='/update'>"); 
 		out.println("<tr><td> 이름 </td> <td><input type = \"text\" name = \"name\" value = "+m.getName()+"></td></tr>");
 		out.println("<tr><td> 학번 </td> <td><input type = \"text\" name = \"num\"value = "+m.getNum()+"></td></tr>");
 		out.println("<tr><td> 전화번호 </td> <td><input type = \"text\" name = \"pnum\"value = "+m.getPnum()+"></td></tr>");

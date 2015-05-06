@@ -15,8 +15,8 @@ public class UpdateServlet extends HttpServlet{
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 
-		resp.setCharacterEncoding("UTF-8"); 
-		resp.setContentType("text/html");
+		/*resp.setCharacterEncoding("UTF-8"); 
+		resp.setContentType("text/html");*/
 	    
 		Long key = Long.parseLong(req.getParameter("key"));
 		
@@ -32,10 +32,12 @@ public class UpdateServlet extends HttpServlet{
 		m.setGitid(req.getParameter("gitid"));
 		pm.close();
 		
-		PrintWriter out = resp.getWriter();
+		/*PrintWriter out = resp.getWriter();
 		
-		out.println("<html><body>");
+		out.println("<html><head><title>팀멤버수정화면</title></head><body>");
 	    out.println("<tr><td><a href=\"/retrieveteammember\" target=\"_self\"> 수정완료 </a> </td></tr>");
-		out.println("</body></html>");	
+		out.println("</body></html>");	*/
+		
+		resp.sendRedirect("/retrieveteammember");
 	}
 }
